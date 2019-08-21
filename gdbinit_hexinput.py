@@ -8,7 +8,7 @@ def shell_unhexlify(hex_arg):
 
 def hexinput(arg):
     procs = gdb.selected_inferior()
-    arg = shell_unhexlify(arg.replace("0x","").replace("\n","")) + "\x0a"
+    arg = shell_unhexlify(arg.replace("0x","").replace("\n","")) + "\\x0a"
     pid = procs.pid
     with open('/dev/stdout') as fd:
         tty_path = os.ttyname(fd.fileno())
