@@ -1,5 +1,5 @@
 # installation  
-add follwing line to .gdb_init  
+add follwing line to .gdbinit  
 ```
 source <path_to_gdbinit_hexinput.py>
 ```
