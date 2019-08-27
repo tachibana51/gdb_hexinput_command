@@ -11,3 +11,8 @@ source <path_to_gdbinit_hexinput.py>
 ```
 (gdb-peda)hexinput 0x11223344
 ```
+
+you can pack with nbits
+```
+(gdb)hexinput 0xdeadbeef 64 #0xdeadbeef will be packed for 64bit little endian
+```
