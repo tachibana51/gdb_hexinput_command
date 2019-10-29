@@ -35,7 +35,6 @@ class COMMAND_HexInput(gdb.Command):
     def __init__(self):
         super(COMMAND_HexInput, self).__init__(
             "hexinput", gdb.COMMAND_RUNNING | gdb.COMMAND_USER)
-        self.last_pad_bits = 0
 
     def invoke(self, arg, from_tty):
         argv = arg.split(" ")
@@ -45,10 +44,7 @@ class COMMAND_HexInput(gdb.Command):
             return
         if len(argv) > 1:
             pad_bits = int(argv[1])
-            self.last_pad_bits = pad_bits
             hexinput(hexnum, pad_bits)
-        else:
-            hexinput(hexnum, self.last_pad_bits)
 
 
 COMMAND_HexInput()
