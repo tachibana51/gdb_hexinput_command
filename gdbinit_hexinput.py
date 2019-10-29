@@ -11,7 +11,7 @@ def shell_unhexlify(hex_arg, padding=0):
     else:
         unhexlifed = r"\x" + r"\x".join(hex_arg[n: n+2]
                                         for n in range(0, len(hex_arg), 2)[::-1])
-    unhexlifed += "\\x00" * (padding//8 - (len(unhexlifed) // 4))
+    unhexlifed += "\\x00" * (padding - (len(unhexlifed) // 4))
     return unhexlifed
 
 
